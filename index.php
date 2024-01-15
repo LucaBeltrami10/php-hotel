@@ -40,8 +40,8 @@ $hotels = [
 
 ];
 
-$parkingFilter = $_GET['parking'] ?? "";
-$voteFilter = $_GET['vote'] ?? "";
+$parkingFilter = $_GET['parking'] ?? "off";
+$voteFilter = $_GET['vote'] ?? 0;
 
 
 ?>
@@ -58,10 +58,17 @@ $voteFilter = $_GET['vote'] ?? "";
 <body>
 <form class="mb-5">
   <h2>Filtra</h2>
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label for="parking" class="form-label">Presenza di parcheggio</label>
     <input type="checkbox" id="parking" name="parking">
-  </div>
+  </div> -->
+  <label for="parking" class="form-label">Presenza di parcheggio:</label>
+  <select class="form-select form-select-lg w-25 mb-3" type="text" id="parking" name="parking">
+  <option value="">Tutti</option>
+    <option value="true">Con parcheggio</option>
+    <option value="false">Senza parcheggio</option>
+    
+  </select>
   <div class="mb-3">
     <label for="vote" class="form-label">Votazione superiore a:</label>
     <input type="number" id="vote" name="vote">
@@ -83,6 +90,7 @@ $voteFilter = $_GET['vote'] ?? "";
     <?php foreach($hotels as $hotel){ ?>
       <tr>
         <?php foreach($hotel as $key => $element){ ?>
+          <?php  ?>
         <th class="fw-normal" ><?php echo $element ?></th>
         <?php } ?>
       </tr>
