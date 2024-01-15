@@ -98,9 +98,13 @@ $voteFilter = $_GET['vote'] ?? "0";
               <th class="fw-normal"> <?php echo $element ?> </th>
             <?php } else{ ?>
 
-              <?php if( $hotel['parking'] == $parkingFilter || $hotel['vote'] >= $voteFilter){ ?>
+              <!-- 
+                Se parking è diverso da parkingFilter --  return non mostrare
+                se vote è minoreuguale di voteFilter --- return non mostrare
+                return -- element
+             -->
+              <?php if( $hotel['parking'] != $parkingFilter){} elseif( $hotel['vote'] <= $voteFilter){}else{ ?>
                 <th><?php echo $element ?></th>
-              <?php }else{?>
               <?php } ?>
 
             <?php } ?>
