@@ -90,6 +90,11 @@ $voteFilter = $_GET['vote'] ?? "";
   </tbody>
 </table>
 
+<div>
+  <p><?php echo $parkingFilter ?></p>
+  <p><?php echo $voteFilter ?></p>
+</div>
+
     
 </body>
 </html>
