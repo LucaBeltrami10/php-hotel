@@ -51,20 +51,8 @@ $hotels = [
     <title>php-hotel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-
-<div>
-  <ul>
-    <?php foreach($hotels as $hotel){ ?>
-      <?php foreach($hotel as $key => $element){ ?>
-        <p>
-          <?php echo $key.': '.$element ?>
-        </p>
-      <?php } ?>
-    <?php } ?>
-  </ul>
-</div>
-
 
 <table class="table">
   <thead>
@@ -80,7 +68,7 @@ $hotels = [
     <?php foreach($hotels as $hotel){ ?>
       <tr>
         <?php foreach($hotel as $key => $element){ ?>
-        <th>1</th>
+        <th class="fw-normal" ><?php echo $element ?></th>
         <?php } ?>
       </tr>
     <?php } ?>
