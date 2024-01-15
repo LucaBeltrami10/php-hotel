@@ -40,8 +40,8 @@ $hotels = [
 
 ];
 
-$parkingFilter = $_GET['parking'] ?? "off";
-$voteFilter = $_GET['vote'] ?? 0;
+$parkingFilter = $_GET['parking'] ?? "all";
+$voteFilter = $_GET['vote'] ?? "0";
 
 
 ?>
@@ -64,14 +64,14 @@ $voteFilter = $_GET['vote'] ?? 0;
   </div> -->
   <label for="parking" class="form-label">Presenza di parcheggio:</label>
   <select class="form-select form-select-lg w-25 mb-3" type="text" id="parking" name="parking">
-  <option value="">Tutti</option>
+  <option value="all">Tutti</option>
     <option value="true">Con parcheggio</option>
     <option value="false">Senza parcheggio</option>
     
   </select>
   <div class="mb-3">
     <label for="vote" class="form-label">Votazione superiore a:</label>
-    <input type="number" id="vote" name="vote">
+    <input type="number" id="vote" name="vote" value="0">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -90,8 +90,16 @@ $voteFilter = $_GET['vote'] ?? 0;
     <?php foreach($hotels as $hotel){ ?>
       <tr>
         <?php foreach($hotel as $key => $element){ ?>
-          <?php  ?>
-        <th class="fw-normal" ><?php echo $element ?></th>
+
+            <!-- <th class="fw-normal"> <?php echo $element ?> </th> -->
+
+            
+            <?php if( $parkingFilter === "all" && $voteFilter == 0 ){ ?>
+              <th class="fw-normal"> <?php echo $element ?> </th>
+            <?php } else{ ?>
+              <th><?php echo 'no' ?></th>
+            <?php } ?>
+
         <?php } ?>
       </tr>
     <?php } ?>
