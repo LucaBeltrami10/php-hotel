@@ -69,30 +69,22 @@ $hotels = [
 <table class="table">
   <thead>
     <tr>
-      <?php foreach($hotels[0] as $key => $hotel){ ?>
-      <th scope="col"><?php echo $key ?></th>
-      <?php } ?>
+      <th scope="col"> Nome </th>
+      <th scope="col"> Descrizione </th>
+      <th scope="col"> Parcheggio </th>
+      <th scope="col"> Voto </th>
+      <th scope="col"> Distanza dal centro </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <?php foreach($hotels as $hotel){ ?>
+      <tr>
+        <?php foreach($hotel as $key => $element){ ?>
+        <th>1</th>
+        <?php } ?>
+      </tr>
+    <?php } ?>
+    
   </tbody>
 </table>
 
