@@ -40,6 +40,7 @@ $hotels = [
 
 ];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -54,22 +55,18 @@ $hotels = [
 
 <div>
   <ul>
-  <?php foreach($hotels as $hotel){ ?>
-  <li> 
-    <p><?php echo $hotel['name'] ?></p>
-    <p><?php echo $hotel['description'] ?></p>
-    <p><?php echo $hotel['parking'] ?></p>
-    <p><?php echo $hotel['vote'] ?></p>
-    <p><?php echo $hotel['distance_to_center'] ?></p>
-    
-  </li>
-  <?php } ?>
+    <?php foreach($hotels as $hotel){ ?>
+      <?php foreach($hotel as $key => $element){ ?>
+        <p>
+          <?php echo $key.': '.$element ?>
+        </p>
+      <?php } ?>
+    <?php } ?>
   </ul>
-    
 </div>
 
 
-<!-- <table class="table">
+<table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -98,7 +95,7 @@ $hotels = [
       <td>@twitter</td>
     </tr>
   </tbody>
-</table> -->
+</table>
 
     
 </body>
