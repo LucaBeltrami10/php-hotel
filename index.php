@@ -69,10 +69,9 @@ $hotels = [
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <?php foreach($hotels[0] as $key => $hotel){ ?>
+      <th scope="col"><?php echo $key ?></th>
+      <?php } ?>
     </tr>
   </thead>
   <tbody>
