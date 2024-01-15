@@ -40,7 +40,8 @@ $hotels = [
 
 ];
 
-
+$parkingFilter = $_GET['parking'] ?? "";
+$voteFilter = $_GET['vote'] ?? "";
 
 
 ?>
