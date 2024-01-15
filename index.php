@@ -41,6 +41,8 @@ $hotels = [
 ];
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +55,18 @@ $hotels = [
 </head>
 
 <body>
+<form class="mb-5">
+  <h2>Filtra</h2>
+  <div class="mb-3">
+    <label for="parking" class="form-label">Presenza di parcheggio</label>
+    <input type="checkbox" id="parking" name="parking">
+  </div>
+  <div class="mb-3">
+    <label for="vote" class="form-label">Votazione superiore a:</label>
+    <input type="number" id="vote" name="vote">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 <table class="table">
   <thead>
@@ -72,7 +86,6 @@ $hotels = [
         <?php } ?>
       </tr>
     <?php } ?>
-    
   </tbody>
 </table>
 
