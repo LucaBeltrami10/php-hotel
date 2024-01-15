@@ -104,7 +104,7 @@ $voteFilter = $_GET['vote'] ?? "0";
                 return -- element
              -->
               <?php if( $hotel['parking'] != $parkingFilter){} elseif( $hotel['vote'] <= $voteFilter){}else{ ?>
-                <th><?php echo $element ?></th>
+                <th class="fw-normal"><?php echo $element ?></th>
               <?php } ?>
 
             <?php } ?>
